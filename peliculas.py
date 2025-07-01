@@ -1,3 +1,4 @@
+#hola
 peliculas = [
     {"titulo": "Matrix", "stock": 50, "vendidas": 0},
     {"titulo": "El Padrino", "stock": 40, "vendidas": 0},
