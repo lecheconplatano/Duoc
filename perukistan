@@ -1,2 +1,6 @@
 def saludo():
     print("hola mundo")
+
+def preguntar():
+    pregunta = input("Cuantos balazos me pegaré mñna: ")
+    return pregunta
