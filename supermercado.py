@@ -152,5 +152,4 @@ while True:
         actualizar_valores()
     elif opc == "5":
         print("Gracias por visitar Jumbo")
-        break
         
