@@ -1,4 +1,5 @@
              #modelo :[marca,pantalla,Ram,disco,GB de DD,procesador,    video]
+             # cambio 1
 productos = {'8475HD': ['HP', 15.6, '8GB', 'DD', '1T', 'Intel Core i5', 'Nvidia GTX1050'],
              '2175HD': ['Acer', 14, '4GB', 'SSD', '512GB', 'Intel Core i5', 'Nvidia GTX1050'],
              'JjfFHD': ['Asus', 14, '16GB', 'SSD', '256GB', 'Intel Core i7', 'Nvidia RTX2080Ti'],
@@ -10,6 +11,7 @@ productos = {'8475HD': ['HP', 15.6, '8GB', 'DD', '1T', 'Intel Core i5', 'Nvidia 
             }
 
         # modelo :[precio,stock]
+        #cambio 2
 stock = {'8475HD': [387990,10],
          '2175HD': [327990,4],
          'JjfFHD': [424990,1],
@@ -95,3 +97,4 @@ while True:
         salir()
     else:
         print("Debe seleccionar una opción valida!!")
+        #fin del codigo
