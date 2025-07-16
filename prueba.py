@@ -79,6 +79,7 @@ def busqueda_fecha(dia,mes):
     for bol in boletas:
         fecha = bol["fecha"].split("/")
         if dia == fecha[0] and mes == fecha[1]:
+                # [[15][03][2025]]
                 encontrados=True
                 print("=================")
                 print("Fecha encontrada")
@@ -106,7 +107,9 @@ def agregar_producto(numero,producto,cantidad,precio_unitario):
 def actualizar_boleta():
     total = 0
     for boleta in boletas:
+        # {"numero": 1001, "fecha": "15/03/2025", "cliente": "Juan Pérez", "total": 0}
         for info in detalle:
+            # {"numero_boleta": 1001, "producto": "Leche", "cantidad": 2, "precio_unitario": 1200},
             if boleta["numero"] == info["numero_boleta"]:
                 subtotal = info["cantidad"] * info["precio_unitario"]
                 total+=subtotal
