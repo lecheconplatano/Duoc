@@ -1,15 +1,16 @@
+import pandas as pd
+
 boletas = {
     "numero": [1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010],
     "fecha": [
         "01/07/2025", "01/07/2025", "02/07/2025", "02/07/2025", "03/07/2025",
         "03/07/2025", "04/07/2025", "04/07/2025", "05/07/2025", "05/07/2025"
     ],
-    "cliente": [
-        "Juan Pérez", "María López", "Carlos Díaz", "Ana Muñoz", "Pedro Rojas",
-        "Laura Torres", "Miguel Vera", "Camila Soto", "Daniel Pino", "Sofía León"
-    ],
-    "total": [12500, 8400, 15600, 7300, 9600, 14100, 11750, 9200, 15000, 8800]
+    "cliente": ["Juan Pérez", "María López", "Carlos Díaz", "Ana Muñoz", "Pedro Rojas",
+        "Laura Torres", "Miguel Vera", "Camila Soto", "Daniel Pino", "Sofía León"],
 }
+
+df = pd.DataFrame(boletas)
 
 productos_por_boleta = {
     1001: [
@@ -55,18 +56,6 @@ productos_por_boleta = {
     ]
 }
 
-#funciones
-def boletas_registradas():
-    # Obtener la cantidad de boletas (todas las listas tienen mismo largo)
-    cantidad_boletas = len(boletas["numero"])       
-    # Recorrer por índice
-    for i in range(cantidad_boletas):
-        print(f"--- Boleta {i+1} ---")
-        for clave, lista in boletas.items():
-            print(f"{clave.capitalize()}: {lista[i]}")
-        print("------------")
-
-
 #Menu Principal
 while True:
     print("============================")
@@ -80,4 +69,12 @@ while True:
     print("6. Salir del programa")
     opc = input("Ingrese opcion: ")
     if opc == "1":
-        boletas_registradas()
+        totales = []
+        for numero in boletas["numero"]:
+            productos = productos_por_boleta[numero]
+            total_boleta = sum(p["cantidad"] * p["precio_unitario"] for p in productos)
+            totales.append(total_boleta)
+        boletas["total"] = totales
+
+    df = pd.DataFrame(boletas)
+    print(df.head())
