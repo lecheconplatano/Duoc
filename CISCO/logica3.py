@@ -64,4 +64,4 @@ for row in matrix:
 print("Mostrar todos los elementos de una matriz en formato matriz")
 for row in matrix:
     for element in row:
-        print(element)
+        print(element)  
